@@ -9,9 +9,8 @@ const sum = grades => grades.reduce((acc, el) => acc + el, 0);
 const calculateGradeSum = values => sum(values);
 
 const validateInput = values => {
-    const gradeSum = sum(values);
 
-    if (gradeSum < 7) {
+    if (values.length !== 7 || values.some(value => value === 0)) {
         alert("Invalid grade total. Please double check your options");
         return false;
     }
